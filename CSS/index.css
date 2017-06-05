@@ -1,0 +1,10 @@
+*{margin: 0;padding: 0;}
+
+
+.container{border: 5px solid Black;background-color: lightblue;width: 80%;margin: auto; margin-top: 50px;}
+.container h1{text-align: center;}
+  .player{border:.5px solid black; padding: 5px;}
+    .main{display: flex;flex-direction: row;justify-content: space-between;width: 90%;margin: auto;}
+      .stats{margin:30px 0 30px 0;}
+      .action{margin:30px 0 30px 0;}
+  .console{padding: 5px;background-color: #999;height: 100px;}
