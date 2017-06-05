@@ -1,10 +1,11 @@
-const MAX_HP = 5980
-let VAR_HP = 3490
+const hp = 5980
+let hpv = 3490
 
-function porce(HPD,HPE){
-  const FIN = 100
-  const CUANTO = Math.round(( HPD * FIN ) / HPE)
-  return CUANTO
+function answer(hpv,hp){
+  const cien = 100
+  const porcentaje = Math.round(( hpv * cien ) / hp)
+  return porcentaje
 }
 
-console.log(porce(19,32))
+
+answer(hpv,hp)
