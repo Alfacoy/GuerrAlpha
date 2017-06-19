@@ -4,37 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- Titulo -->
   <title>GuerrAlpha</title>
 
-  <!-- Estilos CSS -->
+  <!--Estilos CSS-->
   <link rel="stylesheet" href="css/index.css">
+  <!--/Estilos CSS-->
 
 </head>
 <body>
 
+  <button type="button" id="noche" name="button">Ciclo Nocturno</button>
+  <button type="button" id="dia" name="button">Ciclo Diurno</button>
+
   <div class="container">
     <h1>Interfaz GuerrAlpha vs01</h1>
     <div class="player">
-      <h3>Jugador: Humano</h3>
+      <h3 id="name">Jugador:</h3>
       <div class="main">
         <div class="stats">
           <h3>Estadisticas:</h3>
-          <p>HP:</p>
-          <p>ATK:</p>
+          <p id="hpMax">Hp Max:</p>
+          <p id="hp">HP:</p>
+          <p id="atk">ATK:</p>
         </div>
+        <div id="empy"></div>
         <div class="action">
           <h3>Lista de acciones:</h3>
+          <button type="button" name="button" id="atacar">Atacar</button>
+          <button type="button" name="button" id="defender">Defender</button>
+          <button type="button" name="button" id="firstAid">FirstAid</button>
         </div>
       </div>
     </div>
     <div class="console">
       <h3>Consola:</h3>
+      <p id="console"></p>
     </div>
   </div>
 
 
-
-
+  <!--Llamado a Js-->
+  <script src="js/index.js"></script>
+  <script type="text/javascript">
+    window.onload = iniciar;
+  </script>
 </body>
 </html>
