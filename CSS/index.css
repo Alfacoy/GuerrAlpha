@@ -5,6 +5,7 @@
 .container h1{text-align: center;}
   .player{border:.5px solid black; padding: 5px;}
     .main{display: flex;flex-direction: row;justify-content: space-between;width: 90%;margin: auto;}
-      .stats{margin:30px 0 30px 0;}
-      .action{margin:30px 0 30px 0;}
+      .stats{margin:30px 0 20px 0;flex: 1 1 30%;}
+      #empy{flex: 1 1 60%;}
+      .action{display: flex;flex-direction: column;  margin:30px 0 30px 0;flex: 1 1 20%;}
   .console{padding: 5px;background-color: #999;height: 100px;}
