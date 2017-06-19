@@ -32,7 +32,7 @@ let IDatacar = document.querySelector('#atacar');
 const IDdefender = document.querySelector('#defender');
 const IDfirstaid =  document.querySelector('#firstAid');
 
-//Clases
+// -----> Clases
 class humano {
   constructor() {
     this.hp = 500
@@ -41,6 +41,7 @@ class humano {
   }
   atacar(bety){
     bety.hpv=bety.hpv - this.atk;
+    c.innerHTML = "Ataco"
   }
 
   live(hpv){
@@ -57,29 +58,16 @@ class enemigo {
     this.hpv = this.hp
     this.atk = 20
   }
-  atacar(who){
-    who.hpv=who.hpv - this.atk
+  atacar(player){
+    player.hpv = player.hpv - this.atk
   }
 
   answer(hpv,hp){
     const cien = 100
     const porcentaje = Math.round((hpv * cien ) / hp)
-
-    if (porcentaje < 40) {
-      console.log("Vida enemiga menor a 40 .. "+porcentaje)
-    }else {
-      console.log("Vida enemiga mayor a 40.."+porcentaje)
-    }
   }
-
-  live(hpv){
-    if (hpv <= 0)
-    {
-      console.log("Moriste Enemigo")
-    }
   }
-}
-
+// -----> /Fin de Clases
 
 //Llamamos a los jugadores!
   function iniciar(){
@@ -88,7 +76,7 @@ class enemigo {
       nombre.innerHTML = "Jugador: "+ player;
     }
   }
-
+window.onload=iniciar();
 player = new humano;
 aa.innerHTML = "Hp Max: " +player.hp;
 a.innerHTML = "Hp: " + player.hpv;
@@ -99,3 +87,34 @@ let bety = new enemigo;
 
 //Añadiendo eventos a la botonera
 IDatacar.addEventListener('click',player.atacar);
+
+
+//Inicia el bucle..
+var turno = 0;
+
+while (player.hpv >0 && bety.hpv >0) {
+
+  if (turno == 0) {
+
+    if(player.atacar){
+      console.log("Atacaste")
+      turno = 1;
+    }
+
+  }else{
+    if (turno == 1) {
+      bety.answer(bety.hpv,bety.hp);
+      if (bety.answer >= 40) {
+        console.log("Ataco");
+        turno = 0;
+      }
+      else {
+        if (bety.answer <=40) {
+          console.log("no ataco");
+          turno = 0;
+        }
+      }
+    }
+  }
+
+}
