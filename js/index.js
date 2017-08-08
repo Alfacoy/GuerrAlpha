@@ -8,6 +8,7 @@ const y = document.querySelector('#dia');
 y.addEventListener('click',dia);
 
 noche();
+
 function noche() {
   x.style.display="none";
   y.style.display="block";
@@ -19,102 +20,102 @@ function dia() {
   document.body.style.backgroundColor="yellow";
 }
 
-//Datos Dinamicos
-var nombre = document.querySelector('#name');
-var a = document.querySelector('#hp');
-var aa = document.querySelector('#hpMax');
-var b = document.querySelector('#atk');
-var c = document.querySelector('#console');
-c.innerHTML = "Texto de batalla";
 
-//Botonera de accion
-let IDatacar = document.querySelector('#atacar');
-const IDdefender = document.querySelector('#defender');
-const IDfirstaid =  document.querySelector('#firstAid');
+
+//Datos Dinamicos
+var Nombre = document.querySelector('#name');
+var Salud = document.querySelector('#hp');
+var SaludMax = document.querySelector('#hpMax');
+var Ataque = document.querySelector('#atk');
+var Consola = document.querySelector('#console').innerHTML = "Texto de Batalla";
+
 
 // -----> Clases
-class humano {
-  constructor() {
-    this.hp = 500
-    this.hpv = this.hp
-    this.atk = 13
-  }
-  atacar(bety){
-    bety.hpv=bety.hpv - this.atk;
-    c.innerHTML = "Ataco"
+
+
+function Skills(){
+  this.atacar = Atacar;
+
+  function Atacar(jugador,enemigo){
+    enemigo.hpv = enemigo.hpv - jugador.atk;
+    return console.log("Vida de "+ enemigo.nombre + ": " + enemigo.hpv);
   }
 
-  live(hpv){
-    if (hpv <= 0)
-    {
-      console.log("Moriste Humano")
-    }
-  }
 }
 
-class enemigo {
-  constructor() {
-    this.hp = 400
-    this.hpv = this.hp
-    this.atk = 20
-  }
-  atacar(player){
-    player.hpv = player.hpv - this.atk
+function IA(enemigo){
+  this.consulta = Answer;
+  this.dialogo = Dialogar;
+  this.dado = Dado;
+
+
+  function  Answer(hpv,hp){
+      const cien = 100
+      const porcentaje = Math.round((hpv * cien ) / hp)
+      return console.log(porcentaje);
+    }
+
+  function Dado(){
+    let caraDado = Math.round(Math.random()*9)+1;
+    return console.log(caraDado);
   }
 
-  answer(hpv,hp){
-    const cien = 100
-    const porcentaje = Math.round((hpv * cien ) / hp)
+  function Dialogar(){
+    //Proximo a realizar
   }
-  }
+
+}
+
+
+function Player(nombre,hp,atk,def){
+    this.nombre = nombre;
+    this.hp = hp;
+    this.hpv = this.hp;
+    this.atk = atk;
+    this.def = def;
+
+    Skills.call(this);
+
+    if (this.nombre === "Bety") {
+      IA.call(this);
+    }
+}
+
 // -----> /Fin de Clases
 
+
+
+
+
+
 //Llamamos a los jugadores!
-  function iniciar(){
-    let player = prompt("Como te llamaras?","Ragnar");
-    if (player !=null) {
-      nombre.innerHTML = "Jugador: "+ player;
-    }
+
+let player = new Player("Lothar",500,15,12);
+let bety = new Player("Bety",100,20,14);
+
+Nombre.innerHTML = "Jugador: " + player.name;
+SaludMax.innerHTML = "Salud Maxima: " +player.hp;
+Salud.innerHTML = "Salud Actual: " + player.hpv;
+Ataque.innerHTML = "Fuerza de Ataque: " + player.atk;
+
+
+//Ronda de juegos
+
+
+
+function iniciar(){
+  while(0 == 0){
+
+    console.log("Holaaaaaaaa")
+
   }
-window.onload=iniciar();
-player = new humano;
-aa.innerHTML = "Hp Max: " +player.hp;
-a.innerHTML = "Hp: " + player.hpv;
-b.innerHTML = "Atk: " + player.atk;
-
-let bety = new enemigo;
-
-
-//Añadiendo eventos a la botonera
-IDatacar.addEventListener('click',player.atacar);
-
-
-//Inicia el bucle..
-var turno = 0;
-
-while (player.hpv >0 && bety.hpv >0) {
-
-  if (turno == 0) {
-
-    if(player.atacar){
-      console.log("Atacaste")
-      turno = 1;
-    }
-
-  }else{
-    if (turno == 1) {
-      bety.answer(bety.hpv,bety.hp);
-      if (bety.answer >= 40) {
-        console.log("Ataco");
-        turno = 0;
-      }
-      else {
-        if (bety.answer <=40) {
-          console.log("no ataco");
-          turno = 0;
-        }
-      }
-    }
-  }
-
 }
+
+
+
+//Botonera de accion
+const IDatacar = document.querySelector('#atacar');
+IDatacar.addEventListener('Click',player.atacar)
+const IDdefender = document.querySelector('#defender');
+
+const IDfirstaid =  document.querySelector('#firstAid');
