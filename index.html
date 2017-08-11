@@ -16,33 +16,57 @@
 </head>
 <body>
 
-  <button type="button" id="noche" name="button">Ciclo Nocturno</button>
-  <button type="button" id="dia" name="button">Ciclo Diurno</button>
 
-  <div class="container">
-    <h1>Interfaz GuerrAlpha vs01</h1>
-    <div class="player">
-      <h3 id="name">Jugador:</h3>
-      <div class="main">
-        <div class="stats">
-          <h3>Estadisticas:</h3>
-          <p id="hpMax">Hp Max:</p>
-          <p id="hp">HP:</p>
-          <p id="atk">ATK:</p>
+  <div class="container-fluid">
+    <button type="button" id="noche" name="button">Ciclo Nocturno</button>
+    <button type="button" id="dia" name="button">Ciclo Diurno</button>
+
+    <h1 class="text-center">Guerra Apha Version 0.0.0</h1>
+
+    <div class="container">
+
+      <div class="d-flex flex-row justify-content-around">
+
+        <div>
+          <h3>Barra Stats</h3>
+          <p id="clase">Clase:</p>
+          <p id="nombre">Nombre:</p>
+          <p id="salud">Salud:</p>
+          <p id="defensa">Defensa:</p>
+          <p id="fuerza">Fuerza:</p>
         </div>
-        <div id="empy"></div>
-        <div class="action">
-          <h3>Lista de acciones:</h3>
-          <button type="button" name="button" id="atacar">Atacar</button>
-          <button type="button" name="button" id="defender">Defender</button>
-          <button type="button" name="button" id="firstAid">FirstAid</button>
+
+        <div>
+          <h3>Barra Boolean</h3>
+
+          <div class="d-flex flex-column">
+
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" id="espada" class="btn btn-secondary">Espada</button>
+              <button type="button" id="arco" class="btn btn-secondary">Arco</button>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" id="agresivo" class="btn btn-secondary">Agresivo</button>
+              <button type="button" id="defensivo" class="btn btn-secondary">Defensivo</button>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" id="heroe" class="btn btn-secondary">Define tu Clase</button>
+            </div>
+
+          </div>
         </div>
+
       </div>
+
+      <div class="d-flex flex-column">
+          <h3 class="text-center">Barra Consola</h3>
+            <p id="consola" class="text-justify">Aca se situa la informacion de lo que se esta llevando acabo.</p>
+      </div>
+
     </div>
-    <div class="console">
-      <h3>Consola:</h3>
-      <p id="console"></p>
-    </div>
+
   </div>
 
 
