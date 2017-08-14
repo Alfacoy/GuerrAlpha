@@ -1,3 +1,33 @@
+//INICIO DE BOTONERAS.
+//Botonera ARMAS.
+const IDespada = document.querySelector('#espada');
+IDespada.addEventListener('click',ModoEspada);
+const IDarco = document.querySelector('#arco');
+IDarco.addEventListener('click',ModoArco);
+
+
+//Botonera MODO.
+const IDagresivo = document.querySelector('#agresivo');
+IDagresivo.addEventListener('click',ModoAtk);
+const IDdefensivo = document.querySelector('#defensivo');
+IDdefensivo.addEventListener('click',ModoDef);
+
+//Botonera DEFINIR HEROE.
+const IDclase = document.querySelector('#heroe');
+IDclase.addEventListener('click',Heroe);
+
+
+//Botonera RESETEAR ATRIBUTOS.
+const IDreset = document.querySelector('#reset');
+IDreset.addEventListener('click',Reset)
+
+//FIN DE BOTONERAS.
+
+
+
+
+
+
 //DEFINICION DEL ROL DEL PERSONAJE!!
 function ModoAtk(){
   agresivo = true;
@@ -22,27 +52,70 @@ function ModoArco(){
   return consola.innerHTML = "Espada: "+ espada + " Arco: "+arco;
 }
 
-function QueSos(){
-  if(espada){
-      if (agresivo) {
-        player.hpv += (player.hp * 5)/100;
-        player.def += (player.def * 10)/100;
-        player.atk += (player.atk * 20)/100;
-        Salud.innerHTML = "Salud: "+ player.hpv;
-        Defensa.innerHTML = "Defensa: "+ player.def;
-        Ataque.innerHTML = "Fuerza: "+ player.atk;
-        clase.innerHTML = "Clase: Guerrero";
-        return
-      }else if (defensivo) {
-        clase.innerHTML = "Clase: Paladin";
-      }
-
-    }else if (arco) {
-      return clase.innerHTML = "Clase: Arquero";
-    }else {
-      return clase.innerHTML = "Clase: (ATENCION!!) Debes elegir tus atributos previamente!";
-    }
-    return;
-}
 
 //FIN DEFINICION DEL ROL DEL PERSONAJE!!
+
+
+
+
+
+function Heroe(){
+  if(espada){
+    player.hpv += (player.hp * 5)/100;
+    player.def += (player.def * 10)/100;
+    player.atk += (player.atk * 20)/100;
+    salud.innerHTML = "Salud: "+ player.hpv;
+    defensa.innerHTML = "Defensa: "+ player.def;
+    ataque.innerHTML = "Fuerza: "+ player.atk;
+    clase.innerHTML = "Clase: Guerrero";
+    ok = true;
+  }
+
+  IDespada.classList.add("disabled");
+  IDespada.setAttribute('disabled','disabled');
+
+  IDarco.classList.add("disabled");
+  IDarco.setAttribute('disabled','disabled');
+
+  IDagresivo.classList.add("disabled");
+  IDagresivo.setAttribute('disabled','disabled');
+
+  IDdefensivo.classList.add("disabled");
+  IDdefensivo.setAttribute('disabled','disabled');
+
+  IDclase.classList.add("disabled");
+  IDclase.setAttribute('disabled','disabled');
+
+  IDreset.classList.remove('invisible');
+}
+
+
+function Reset(){
+    agresivo = false;
+    defensivo = false;
+    espada = false;
+    arco = false;
+    ok = false;
+
+  IDespada.classList.remove("disabled");
+  IDespada.removeAttribute('disabled','active');
+
+  IDarco.classList.remove("disabled");
+  IDarco.removeAttribute('disabled','active');
+
+  IDagresivo.classList.remove("disabled");
+  IDagresivo.removeAttribute('disabled','active');
+
+  IDdefensivo.classList.remove("disabled");
+  IDdefensivo.removeAttribute('disabled','active');
+
+  IDclase.classList.remove("disabled");
+  IDclase.removeAttribute('disabled','active');
+
+  IDreset.classList.add('invisible');
+
+  clase.innerHTML = "Clase: Desconocida !";
+  salud.innerHTML = "Salud: " + 500;
+  defensa.innerHTML = "Defensa: " + 12;
+  ataque.innerHTML = "Fuerza: " + 15;
+}

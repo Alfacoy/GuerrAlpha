@@ -5,11 +5,11 @@ function Skills(){
 
   function Atacar(jugador,enemigo){
     if (agresivo){
-      enemigo.hpv = enemigo.hpv - (jugador.atk * 20);
-      return console.log("Vida de "+ enemigo.nombre + ": " + enemigo.hpv);
+      enemigo.hpv = enemigo.hpv - jugador.atk;
+      consola.innerHTML= "Vida de "+ enemigo.nombre + ": " + enemigo.hpv;
     }else {
       enemigo.hpv = enemigo.hpv - jugador.atk;
-      return console.log("Vida de "+ enemigo.nombre + ": " + enemigo.hpv);
+      consola.innerHTML= "Vida de "+ enemigo.nombre + ": " + enemigo.hpv;
     }
   }
 }
