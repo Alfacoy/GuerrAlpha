@@ -32,23 +32,31 @@ IDreset.addEventListener('click',Reset)
 function ModoAtk(){
   agresivo = true;
   defensivo = false;
+  IDagresivo.classList.add("btn-danger");
+  IDdefensivo.classList.remove("btn-danger");
   return consola.innerHTML = "Defensa: "+ defensivo + " Agresivo: "+agresivo;
 }
 
 function ModoDef(){
   defensivo = true;
   agresivo = false;
+  IDdefensivo.classList.add("btn-danger");
+  IDagresivo.classList.remove("btn-danger");
   return consola.innerHTML = "Defensa: "+ defensivo + " Agresivo: "+agresivo;
 }
 
 function ModoEspada(){
   espada = true;
   arco = false;
+  IDespada.classList.add("btn-danger");
+  IDarco.classList.remove("btn-danger");
   return consola.innerHTML = "Espada: "+ espada + " Arco: "+arco;
 }
 function ModoArco(){
   espada = false;
   arco = true;
+  IDarco.classList.add("btn-danger");
+  IDespada.classList.remove("btn-danger");
   return consola.innerHTML = "Espada: "+ espada + " Arco: "+arco;
 }
 
@@ -99,15 +107,19 @@ function Reset(){
 
   IDespada.classList.remove("disabled");
   IDespada.removeAttribute('disabled','active');
+  IDespada.classList.remove("btn-danger");
 
   IDarco.classList.remove("disabled");
   IDarco.removeAttribute('disabled','active');
+  IDarco.classList.remove("btn-danger");
 
   IDagresivo.classList.remove("disabled");
   IDagresivo.removeAttribute('disabled','active');
+  IDagresivo.classList.remove("btn-danger");
 
   IDdefensivo.classList.remove("disabled");
   IDdefensivo.removeAttribute('disabled','active');
+  IDdefensivo.classList.remove("btn-danger");
 
   IDclase.classList.remove("disabled");
   IDclase.removeAttribute('disabled','active');
