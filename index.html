@@ -15,20 +15,18 @@
 
 </head>
 <body>
-
-
   <div class="container-fluid">
     <button type="button" id="noche" name="button">Ciclo Nocturno</button>
     <button type="button" id="dia" name="button">Ciclo Diurno</button>
 
-    <h1 class="text-center">Guerra Apha Version 0.0.0</h1>
+    <h1 class="text-center">"Nombre del Titulo" Alfa Version 1.0.0</h1>
 
     <div class="container">
 
-      <div class="d-flex flex-row justify-content-around">
+      <div id="superior" class="d-flex flex-row justify-content-around">
 
         <div>
-          <h3>Barra Stats</h3>
+          <h3 class="text-center">Estadisticas</h3>
           <p id="clase">Clase:</p>
           <p id="nombre">Nombre:</p>
           <p id="salud">Salud:</p>
@@ -38,7 +36,15 @@
         </div>
 
         <div>
-          <h3>Barra Boolean</h3>
+          <h3 class="text-center">Habilidades</h3>
+          <p>Habilidad: 1</p>
+          <p>Habilidad: 2</p>
+          <p>Habilidad: 3</p>
+          <p>Habilidad: 4</p>
+        </div>
+
+        <div>
+          <h3 class="text-center">Equipo</h3>
 
           <div class="d-flex flex-column">
 
@@ -65,10 +71,33 @@
         </div>
 
       </div>
+        <hr>
+      <div id="inferior" class="d-flex flex-row justify-content-around">
 
-      <div class="d-flex flex-column">
-          <h3 class="text-center">Barra Consola</h3>
-            <p id="consola" class="text-justify">Aca se situa la informacion de lo que se esta llevando acabo.</p>
+          <div class="d-flex flex-column">
+            <h3 class="text-center">Barra Consola</h3>
+            <p id="consola">Aca se situa la informacion de lo que se esta llevando acabo.</p>
+          </div>
+
+          <div>
+            <h3 class="text-center">Mapa</h3>
+            <div class="row">
+              <div class="box" id="box0"></div>
+              <div class="box" id="box1"></div>
+              <div class="box" id="box2"></div>
+            </div>
+            <div class="row">
+              <div class="box" id="box3"></div>
+              <div class="box" id="box4"></div>
+              <div class="box" id="box5"></div>
+            </div>
+            <div class="row">
+              <div class="box" id="box6"></div>
+              <div class="box" id="box7"></div>
+              <div class="box" id="box8"></div>
+            </div>
+          </div>
+
       </div>
 
     </div>
