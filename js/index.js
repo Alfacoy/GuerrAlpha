@@ -15,6 +15,7 @@ function Inicio(){
   if(ok == true){
     IDiniciar.classList.add("disabled");
     IDiniciar.setAttribute('disabled','disabled');
+    
     while (bety.hpv > 0) {
       player.atacar(player,bety);
     }
