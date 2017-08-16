@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-  <title>GuerrAlpha</title>
+  <title>Proyecto Principal</title>
 
   <!--Estilos CSS-->
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -15,72 +15,120 @@
 
 </head>
 <body>
-  <div class="container-fluid">
+
     <button type="button" id="noche" name="button">Ciclo Nocturno</button>
     <button type="button" id="dia" name="button">Ciclo Diurno</button>
 
-    <h1 class="text-center">"Nombre del Titulo" Alfa Version 1.0.0</h1>
+    <h1 class="text-center display-3">"Nombre del Titulo" Alfa Version 1.0.0</h1>
 
-    <div class="container">
 
-      <div id="superior" class="d-flex flex-row justify-content-around">
+    <div id="interfaz" class="container">
 
-        <div>
-          <h3 class="text-center">Estadisticas</h3>
-          <p id="clase">Clase:</p>
-          <p id="nombre">Nombre:</p>
-          <p id="salud">Salud:</p>
-          <p id="defensa">Defensa:</p>
-          <p id="fuerza">Fuerza:</p>
-          <p id="potHp">Pociones:</p>
+      <div id="superior" class="d-flex flex-row justify-content-between">
+
+        <div id="stats" class="col-xs-12 col-md-5">
+          <h3 class="text-center display-4">Estadisticas</h3>
+          <div class="d-flex flex-row justify-content-around">
+            <div>
+              <p id="clase">Clase:</p>
+              <p id="nombre">Nombre:</p>
+              <p id="salud">Salud:</p>
+              <p id="defensa">Defensa:</p>
+              <p id="fuerza">Fuerza:</p>
+              <p id=
+              "potHp">Pociones:</p>
+            </div>
+            <div>
+              <p id="">Vit:</p>
+              <p id="">Str:</p>
+              <p id="">Dex:</p>
+              <p id="">Agi:</p>
+              <p id="">Hit:</p>
+              <p id="">Lck:</p>
+            </div>
+          </div>
+
         </div>
 
-        <div>
-          <h3 class="text-center">Habilidades</h3>
+        <div id="skills" class="col-xs-12 col-md-4">
+          <h3 class="text-center display-4">Habilidades</h3>
           <p>Habilidad: 1</p>
           <p>Habilidad: 2</p>
           <p>Habilidad: 3</p>
           <p>Habilidad: 4</p>
         </div>
 
-        <div>
-          <h3 class="text-center">Equipo</h3>
+        <div id="mode" class="col-xs-12  hidden-xl-down">
+          <h3 class="text-center display-4">Equipo</h3>
+          <div class="d-flex flex-row justify-content-between">
 
-          <div class="d-flex flex-column">
-
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" id="espada" class="btn btn-secondary">Espada</button>
-              <button type="button" id="arco" class="btn btn-secondary">Arco</button>
+            <div class="d-flex flex-column">
+              <h4>Armas</h4>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" id="espada" class="btn btn-secondary">Espada</button>
+                <button type="button" id="arco" class="btn btn-secondary">Arco</button>
+              </div>
+              <h4>Estado</h4>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" id="agresivo" class="btn btn-secondary">Agresivo</button>
+                <button type="button" id="defensivo" class="btn btn-secondary">Defensivo</button>
+              </div>
             </div>
 
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" id="agresivo" class="btn btn-secondary">Agresivo</button>
-              <button type="button" id="defensivo" class="btn btn-secondary">Defensivo</button>
+            <div class="d-flex flex-column">
+              <h4>Armaduras</h4>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" id="espada" class="btn btn-secondary">Ligera</button>
+                <button type="button" id="arco" class="btn btn-secondary">Pesada</button>
+              </div>
+              <h4>Accesorios</h4>
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" id="agresivo" class="btn btn-secondary">Anillo</button>
+                <button type="button" id="defensivo" class="btn btn-secondary">Colgante</button>
+              </div>
             </div>
 
+          </div>
+
+          <div id="equipo_reset" class="d-flex flex-column">
             <div class="btn-group" role="group" aria-label="Basic example">
               <button type="button" id="heroe" class="btn btn-secondary">Define tu Clase</button>
             </div>
 
             <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" id="iniciar" class="btn btn-secondary">Iniciar</button>
               <button type="button" id="reset" class="btn btn-secondary invisible">Reset</button>
             </div>
-
           </div>
+
         </div>
 
       </div>
-        <hr>
-      <div id="inferior" class="d-flex flex-row justify-content-around">
 
-          <div class="d-flex flex-column">
-            <h3 class="text-center">Barra Consola</h3>
-            <p id="consola">Aca se situa la informacion de lo que se esta llevando acabo.</p>
+
+        <hr>
+
+        <div id="central" class="d-flex flex-row justify-content-between">
+
+          <button type="button" name="button" class="btn btn-secondary" id="mercenario">Mercenarios</button>
+
+          <button type="button" name="button" class="btn btn-secondary hidden-xl-down" id="volver">Volver</button>
+
+          <button type="button" id="iniciar" class="btn btn-secondary">Iniciar</button>
+
+        </div>
+
+        <hr>
+
+
+      <div id="inferior" class="d-flex flex-row justify-content-between">
+
+          <div id="box_consola" class="d-flex flex-column">
+            <h3 class="text-center display-4">Consola</h3>
+            <p id="consola"></p>
           </div>
 
-          <div>
-            <h3 class="text-center">Mapa</h3>
+          <div id="map">
+            <h3 class="text-center display-4">Mapa</h3>
             <div class="row">
               <div class="box" id="box0"></div>
               <div class="box" id="box1"></div>
@@ -102,7 +150,6 @@
 
     </div>
 
-  </div>
 
 
   <!--Llamado a Js-->
