@@ -12,6 +12,13 @@ IDagresivo.addEventListener('click',ModoAtk);
 const IDdefensivo = document.querySelector('#defensivo');
 IDdefensivo.addEventListener('click',ModoDef);
 
+
+//DIRECCIONANTE!
+const IDmercenario = document.querySelector('#mercenario');
+IDmercenario.addEventListener('click',Recluta);
+const IDback = document.querySelector('#volver');
+IDback.addEventListener('click',Back);
+
 //Botonera DEFINIR HEROE.
 const IDclase = document.querySelector('#heroe');
 IDclase.addEventListener('click',Heroe);
@@ -60,11 +67,26 @@ function ModoArco(){
   return consola.innerHTML = "Espada: "+ espada + " Arco: "+arco;
 }
 
-
 //FIN DEFINICION DEL ROL DEL PERSONAJE!!
 
 
+function Recluta(){
+  mode.classList.remove("hidden-xl-down");
+  stats.classList.add("hidden-xl-down");
+  skills.classList.add("hidden-xl-down");
 
+  IDback.classList.remove('hidden-xl-down');
+  IDmercenario.classList.add('hidden-xl-down');
+}
+
+function Back(){
+  mode.classList.add("hidden-xl-down");
+  stats.classList.remove("hidden-xl-down");
+  skills.classList.remove("hidden-xl-down");
+
+  IDback.classList.add('hidden-xl-down');
+  IDmercenario.classList.remove('hidden-xl-down');
+}
 
 
 function Heroe(){
