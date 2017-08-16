@@ -1,8 +1,27 @@
 /*Caja Principal*/
-.container{border: 5px solid Black;background-color: #F39C12;padding: 50px;border-radius:15px;}
+#interfaz{border: 5px solid Black;background-color: #F39C12;padding: 50px;border-radius:15px;}
 
 /*Caja de Mapa*/
 .box{width: 80px;height: 80px;border: .5px solid black;}
 
 /*Superior*/
 #superior{margin-bottom: 50px;}
+
+/*Central*/
+#central{}
+
+/*Inferior*/
+#inferior{}
+
+
+
+
+#stats{}
+#skills{}
+#mode{}
+
+#box_consola{}
+#map{}
+
+
+#equipo_reset{margin-top: 50px;}
