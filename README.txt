@@ -2,4 +2,4 @@
 
 Estamos integrando el proyecto a VUE y FIREBASE !! 
 
-LINK A LA APLICACION <a href="https://github.com/Alfacoy/vpg">Clik Aqui!</a>
+LINK A LA APLICACION https://github.com/Alfacoy/vpg
