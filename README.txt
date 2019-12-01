@@ -1,3 +1,3 @@
-# FUERA DE SERVICIO
+#FUERA DE SERVICIO
 
 https://alfacoy.github.io/GuerrAlpha/
